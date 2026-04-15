@@ -1,0 +1,191 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family:'Times New Roman', Times, serif;
+  background: #f7f4d5;
+  line-height: 1.6;
+}
+
+/* ================= */
+/* NAVBAR */
+/* ================= */
+.navbar {
+  background: #354024 ;
+  color: #f7f4d5;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 20px;
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #f7f4d5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* ================= */
+/* HERO */
+/* ================= */
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= */
+/* MAIN */
+/* ================= */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+/* CARD */
+article {
+  background: #889063;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* TYPO */
+h2 {
+  color: #354024;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+/* LIST */
+ul {
+  margin-left: 20px;
+}
+
+/* GRID */
+.skill-container,
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.belajar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* FORM */
+form {
+  background: #bdb77c;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+  background: #8a7d4c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #8a7d4c ;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: blue;
+  color: white;
+}
+
+/* ================= */
+/* RESPONSIVE */
+/* ================= */
+
+/* TABLET */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+  }
+
+  .skill-container,
+  .project-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .skill-container,
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}

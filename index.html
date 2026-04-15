@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembar Kerja 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+     <header class="navbar">
+        <div class="nav-container">
+            <!-- KIRI -->
+            <h1 class="logo">Salma Nurul Aliyah</h1>
+
+            <!-- KANAN -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#belajar">Belajar</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+
+     <!-- HERO (agar foto tetap ada)-->
+      <section class="hero">
+        <img src="potoku.jpeg" alt="potoku">
+        <p>Mahasiswa Informatika</p>
+
+     <!---->
+        <main>
+            
+            <!--Tentang-->
+            <section id="tentang">
+                <h2>Tentang saya</h2>
+                <article>
+                    <p>Saya adalah mahasiswi S1 Informatika semester 4, dan sekarang saya sedang menempuh pendidikan di Institut Teknologi, Sains, dan Kesehatan RS dr. Soepraoen Malang. Ini adalah tugas Pemrograman Web, dan saya sedang belajar membuat tampilan web responsif menggunakan CSS modern</p>
+                </article>
+            </section>
+
+
+             <!-- Belajar -->
+             <section id="belajar">
+                <h2>Belajar</h2>
+
+                <div class="belajar-container">
+                    <article>
+                        <h3>Pemrograman Web</h3>
+                        <p>Mata kuliah ini membahas konsep dan praktik pengembangan aplikasi web modern, meliputi arsitektur web (client-server), HTML, CSS, JavaScript, backend PHP-Laravel, basis data relasional, API, keamanan dasar, testing, dan deployment.</p>
+                    </article>
+
+                    <article>
+                        <h3>Jaringan Komputer</h3>
+                        <p>Matakuliah praktikum yang berisikan tentang konfirgurasi sebuah router agar dapat mengelolah data, baik secara Lokal maupun secara Wider network.</p>
+                    </article>
+
+                    <article>
+                        <h3>Sistem Informasi</h3>
+                        <p>Mata kuliah ini bertujuan untuk memberikan pemahaman terhadap sistem informasi yang mencakup teori, teknologi dan perangkat yang dapat digunakan dalam mengelola bisnis.</p>
+                    </article>
+                </div>
+             </section>
+
+             <!-- Kontak -->
+              <section id="kontak">
+                <h2>Kontak</h2>
+                <article>
+                    <p>Email: salmanurul@gmail.com</p>
+                    <p>No Hp: +6281234567890</p>
+                </article>
+              </section>
+
+              <!-- Form -->
+               <section id="form">
+                <h2> Form Pendaftaran</h2>
+
+                <form id="formPendaftaran">
+                    <label>Nama:</label>
+                    <input type="text" id="nama" required>
+
+                    <label>Email:</label>
+                    <input type="text" id="email" required>
+
+                    <label>No Hp:</label>
+                    <input type="tel" id="nohp" required>
+
+                    <label>Kategori</label>
+                    <select id="kategori" required>
+                        <option value="">-- Pilih --</option>
+                        <option>PemWeb</option>
+                        <option>JarKom</option>
+                        <option>SisFor</option>
+                    </select>
+
+                    <label>Pesan:</label>
+                    <textarea id="pesan" rows="4"></textarea>
+
+                    <button type="submit">Kirim</button>
+
+                </form>
+
+                <!--HASIL-->
+                <div id="hasilPendaftaran"></div>
+
+        </section>
+
+        </main>
+
+        <!-- Footer -->
+         <footer>
+            <p>&copy; 2026 Belajar PemWeb</p>
+         </footer>
+         <script src="script.js"></script>
+</body>
+</html>
