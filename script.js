@@ -24,9 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Membuat div hasil dengan animasi fadeIn yang elegan
         hasil.innerHTML = `
-            <div style="margin-top:20px; padding:15px; background:#f1f5f9; border-radius:10px;">
-                <h3>Data Berhasil Dikirim ✅</h3>
+            <div style="margin-top:20px; padding:20px; background:#e2ecd3; color:#1f280f; border-radius:10px; border-left:6px solid #889063; box-shadow: 0 4px 6px rgba(0,0,0,0.1); opacity:0; transform:translateY(15px); transition:all 0.5s ease-out;" id="hasilAnim">
+                <h3 style="margin-bottom:10px; color:#354024;">🎉 Data Berhasil Dikirim 🎉</h3>
                 <p><strong>Nama:</strong> ${nama}</p>
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>No HP:</strong> ${nohp}</p>
@@ -35,7 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        alert("Pesan berhasil dikirim!");
+        // Memberikan jeda tipis agar browser merender DOM sebelum mentrigger CSS transition
+        setTimeout(() => {
+            const hasilAnim = document.getElementById("hasilAnim");
+            if (hasilAnim) {
+                hasilAnim.style.opacity = "1";
+                hasilAnim.style.transform = "translateY(0)";
+            }
+        }, 50);
+
         form.reset();
     });
 
