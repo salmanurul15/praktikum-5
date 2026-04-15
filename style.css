@@ -149,6 +149,24 @@ button:hover {
   cursor: pointer;
 }
 
+/* SOCIAL MEDIA */
+#social-media article {
+  text-align: center;
+  font-size: 18px;
+}
+
+#social-media a {
+  color: #354024;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#social-media a:hover {
+  color: #f7f4d5;
+  text-decoration: underline;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
