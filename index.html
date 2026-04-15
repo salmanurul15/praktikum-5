@@ -119,6 +119,33 @@
 
         </section>
 
+        <!-- VISITOR COUNTER -->
+        <section id="visitor-counter">
+            <h2>Buku Tamu / Visitor</h2>
+            <article>
+                <div class="counter-info">
+                    <p>Total Kunjungan: <strong id="view-count">0</strong></p>
+                </div>
+                
+                <div class="visitor-form">
+                    <form id="formVisitor">
+                        <label for="visitorName">Siapa yang berkunjung?</label>
+                        <div style="display: flex; gap: 10px; margin-top: 5px;">
+                            <input type="text" id="visitorName" placeholder="Masukkan nama Anda..." required>
+                            <button type="submit">Hadir!</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="visitor-list-container">
+                    <h3>Daftar Pengunjung Baru:</h3>
+                    <ul id="visitorList" class="visitor-list">
+                        <!-- Visitor items will be appended here -->
+                    </ul>
+                </div>
+            </article>
+        </section>
+
         </main>
 
         <!-- Footer -->

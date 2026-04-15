@@ -167,6 +167,55 @@ button:hover {
   text-decoration: underline;
 }
 
+/* VISITOR COUNTER */
+#visitor-counter article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.counter-info {
+  background: #f7f4d5;
+  color: #354024;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.visitor-form form {
+  background: none;
+  padding: 0;
+}
+
+.visitor-form input {
+  flex: 1;
+}
+
+.visitor-list-container h3 {
+  color: #f7f4d5;
+  margin-bottom: 10px;
+}
+
+.visitor-list {
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.visitor-list li {
+  background: #f7f4d5;
+  color: #354024;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 /* FOOTER */
 footer {
   text-align: center;

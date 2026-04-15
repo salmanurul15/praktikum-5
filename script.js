@@ -43,4 +43,61 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("User sedang mengetik nama...");
     });
 
+    // === VISITOR COUNTER & GUESTBOOK ===
+    
+    // 1. Page View Counter
+    let viewCount = localStorage.getItem("pageViews") || 0;
+    viewCount++;
+    localStorage.setItem("pageViews", viewCount);
+    document.getElementById("view-count").innerText = viewCount;
+
+    // 2. Load Visitors
+    const visitorListEl = document.getElementById("visitorList");
+    let visitors = JSON.parse(localStorage.getItem("visitorsData")) || [];
+
+    function renderVisitors() {
+        visitorListEl.innerHTML = "";
+        if (visitors.length === 0) {
+            visitorListEl.innerHTML = "<li style='font-style: italic; font-weight: normal'>Belum ada pengunjung. Jadilah yang pertama!</li>";
+        } else {
+            visitors.forEach(visitor => {
+                const li = document.createElement("li");
+                li.innerText = "👋 " + visitor;
+                visitorListEl.appendChild(li);
+            });
+        }
+    }
+    
+    renderVisitors();
+
+    // 3. Add Visitor
+    const formVisitor = document.getElementById("formVisitor");
+    formVisitor.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const visitorNameInput = document.getElementById("visitorName");
+        const name = visitorNameInput.value.trim();
+
+        if (name) {
+            // Add new visitor to the beginning of the array
+            visitors.unshift(name);
+            // Limit to 20 recent visitors to save space
+            if (visitors.length > 20) visitors.pop();
+            
+            localStorage.setItem("visitorsData", JSON.stringify(visitors));
+            
+            visitorNameInput.value = "";
+            renderVisitors();
+            
+            // simple visual feedback
+            const btn = formVisitor.querySelector("button");
+            const originalText = btn.innerText;
+            btn.innerText = "Sukses!";
+            btn.style.background = "#4CAF50";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "";
+            }, 1000);
+        }
+    });
+
 });
