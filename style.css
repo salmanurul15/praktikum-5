@@ -8,7 +8,7 @@
 /* BODY */
 body {
   font-family:'Times New Roman', Times, serif;
-  background: #f7f4d5;
+  background: #ffffff;
   line-height: 1.6;
 }
 
@@ -126,7 +126,7 @@ ul {
 
 /* FORM */
 form {
-  background: #bdb77c;
+  background: #4d4b3b;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -262,4 +262,30 @@ footer {
   body {
     font-size: 14px;
   }
+
+ /* Tambahkan ini di bagian PALING BAWAH style.css */
+body.dark-mode {
+    background: #f7f4d5 !important; /* Ganti jadi terang */
+    color: #354024 !important;      /* Teks jadi gelap */
+}
+
+body.dark-mode section {
+    background: #ffffff !important;
+    color: #354024 !important;
+}
+
+body.dark-mode .navbar {
+    background: #889063 !important; /* Warna navbar berubah */
+}
+
+body.dark-mode h2, body.dark-mode h3 {
+    color: #354024 !important;
+}
+
+/* Pastikan teks di dalam list/kartu tetap terbaca */
+body.dark-mode .visitor-list li, 
+body.dark-mode .counter-info {
+    background: #354024 !important;
+    color: #f7f4d5 !important;
+}
 }
