@@ -121,4 +121,100 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // === DARK MODE ===
+    const navMenu = document.querySelector(".nav-menu");
+    if (navMenu) {
+        const darkModeLi = document.createElement("li");
+        const darkModeBtn = document.createElement("button");
+        darkModeBtn.id = "darkModeToggle";
+        darkModeBtn.className = "dark-mode-btn";
+        darkModeBtn.innerText = "🌙 Dark Mode";
+        darkModeLi.appendChild(darkModeBtn);
+        navMenu.appendChild(darkModeLi);
+
+        const body = document.body;
+
+        // Cek Local Storage
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+            darkModeBtn.innerText = "☀️ Light Mode";
+        }
+
+        darkModeBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+                darkModeBtn.innerText = "☀️ Light Mode";
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+                darkModeBtn.innerText = "🌙 Dark Mode";
+            }
+        });
+
+        // =========================
+// LOADING SCREEN FULL
+// =========================
+
+window.addEventListener("load", function () {
+    const loadingScreen = document.getElementById("loading-screen");
+
+    if (!loadingScreen) return;
+
+    setTimeout(() => {
+        loadingScreen.style.opacity = "0";
+        loadingScreen.style.transition = "0.5s ease";
+
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, 500);
+    }, 1000); // durasi loading 1 detik
+});
+    }
+
+    const input = document.getElementById("todoInput");
+const addBtn = document.getElementById("addTodo");
+const list = document.getElementById("todoList");
+
+// ambil data dari localStorage
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+function renderTodo() {
+    list.innerHTML = "";
+
+    todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            ${todo}
+            <button onclick="deleteTodo(${index})">Hapus</button>
+        `;
+
+        list.appendChild(li);
+    });
+}
+
+// tambah todo
+addBtn.addEventListener("click", function () {
+    if (input.value.trim() === "") return;
+
+    todos.push(input.value);
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+    input.value = "";
+    renderTodo();
+});
+
+// hapus todo
+function deleteTodo(index) {
+    todos.splice(index, 1);
+    localStorage.setItem("todos", JSON.stringify(todos));
+    renderTodo();
+}
+
+// render awal
+renderTodo();
+
+    
 });
